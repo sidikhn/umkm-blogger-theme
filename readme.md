@@ -28,17 +28,17 @@ Designed for community marketplaces, village business showcases, KKN projects, a
 
 # Features
 
-- Responsive Design
-- Modern UI
-- Dynamic UMKM Card Layout
-- Auto Category Section
-- Hero Slider
-- Google Maps Integration
-- SEO Friendly
-- Fast Loading
-- Mobile Friendly
-- Clean Layout
-- Blogger Native Compatible
+* Responsive Design
+* Modern UI
+* Dynamic UMKM Card Layout
+* Auto Category Section
+* Hero Slider
+* Google Maps Integration
+* SEO Friendly
+* Fast Loading
+* Mobile Friendly
+* Clean Layout
+* Blogger Native Compatible
 
 ---
 
@@ -51,7 +51,6 @@ theme/
 post-template/
 └── post-template-umkm.html
 ```
-````
 
 ---
 
@@ -83,7 +82,7 @@ Copy all contents, then paste into Blogger Post Editor using **HTML View**.
 
 ---
 
-# 🛠 Customization
+# Customization
 
 ## Change Logo
 
@@ -146,29 +145,29 @@ umkm-blogger-theme/
 
 | Device  | Support |
 | ------- | ------- |
-| Desktop | ✅      |
-| Tablet  | ✅      |
-| Mobile  | ✅      |
+| Desktop | ✅       |
+| Tablet  | ✅       |
+| Mobile  | ✅       |
 
 ---
 
 # Optimization
 
-- Lazy Load Image
-- Lightweight Layout
-- Smooth Animation
-- Optimized DOM Structure
+* Lazy Load Image
+* Lightweight Layout
+* Smooth Animation
+* Optimized DOM Structure
 
 ---
 
 # Best Use Cases
 
-- Village UMKM Catalog
-- KKN Project
-- Community Marketplace
-- Local Business Directory
-- Product Showcase
-- Digital Village Website
+* Village UMKM Catalog
+* KKN Project
+* Community Marketplace
+* Local Business Directory
+* Product Showcase
+* Digital Village Website
 
 ---
 
@@ -177,7 +176,3 @@ umkm-blogger-theme/
 Developed by HN Sidik
 
 Feel free to modify and use this template for personal, educational, or community projects.
-
-```
-
-```
