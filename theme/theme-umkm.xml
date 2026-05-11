@@ -1,0 +1,1081 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <title><data:blog.pageTitle/></title>
+    
+    <link href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap' rel='stylesheet'/>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
+    <script src='https://cdn.tailwindcss.com'/>
+    
+    <script>
+    //<![CDATA[
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: { primary: '#0f766e', secondary: '#0d9488' }
+                }
+            }
+        }
+    //]]>
+    </script>
+
+    <b:skin><![CDATA[
+        body { margin: 0; padding: 0; background-color: #fafaf9; color: #1c1917; }
+        
+        /* --- STYLING OTOMATIS UNTUK ADMIN AWAM (SMART UI) --- */
+        .post-body { font-size: 1.1rem; }
+        .post-body p { margin-bottom: 1.5rem; line-height: 1.8; color: #44403c; }
+        
+        /* Gambar Otomatis Bagus */
+        .post-body img { 
+            border-radius: 1.5rem; 
+            margin: 2rem auto; 
+            display: block; 
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Tombol WA Otomatis */
+        .post-body a[href*="wa.me"], .post-body a[href*="whatsapp.com"] {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white !important;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 10px 0;
+            transition: all 0.3s;
+        }
+        .post-body a[href*="wa.me"]:before, .post-body a[href*="whatsapp.com"]:before { content: '\f232'; font-family: 'Font Awesome 6 Brands'; }
+        
+        /* Tombol Maps Otomatis */
+        .post-body a[href*="googleusercontent.com/maps"], .post-body a[href*="goo.gl/maps"], .post-body a[href*="maps.app.goo.gl"] {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #4285F4;
+            color: white !important;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 10px 0;
+            transition: all 0.3s;
+        }
+        .post-body a[href*="googleusercontent.com/maps"]:before, .post-body a[href*="goo.gl/maps"]:before, .post-body a[href*="maps.app.goo.gl"]:before { content: '\f3c5'; font-family: 'Font Awesome 6 Free'; font-weight: 900; }
+
+        .post-body a:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* Existing Rules */
+        .widget-item-control, .post-feader, .post-footer, #navbar-iframe { display: none !important; }
+        html { scroll-behavior: smooth; }
+        #hero-slider { transition: background-image 1.5s ease-in-out; }
+    ]]></b:skin>
+</head>
+<body class='antialiased flex flex-col min-h-screen'>
+
+    <nav class='bg-white/90 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-100 shadow-sm transition-all duration-300 relative'>
+        <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between'>
+            
+<a class='flex items-center gap-3 md:gap-4 group' href='/'>
+    <!-- Bungkus kedua logo dalam satu div agar jaraknya bisa lebih rapat -->
+    <div class='flex items-center gap-1.5 md:gap-0'>
+        
+        <!-- Logo Desa: h-11 diubah menjadi h-14 agar ukurannya lebih besar -->
+        <img alt='Logo Desa' class='h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300' src='https://lh3.googleusercontent.com/d/141YPtPd-gY5pVKLh-h-SoUP0nXZcLK6Z'/>
+
+        <!-- Logo UNY: Ukuran tetap h-11 -->
+        <img alt='Logo UNY' class='h-11 w-auto object-contain group-hover:scale-105 transition-transform duration-300' src='https://lh3.googleusercontent.com/d/15wlp1am1VkXWGMuuyBxTsYtnrwmhvFYc'/>
+        
+    </div>
+
+    <div class='h-8 w-px bg-gray-200 hidden md:block'/>
+    <span class='font-extrabold text-xl text-gray-800 hidden lg:block tracking-tight'>UMKM Srihardono</span>
+</a>
+            
+            <div class='hidden md:flex items-center gap-2'>
+                <a class='text-sm font-bold text-teal-700 bg-teal-50 px-5 py-2.5 rounded-full' href='/'>Beranda</a>
+                <div class='relative group'>
+    <button class='text-sm font-semibold text-gray-500 hover:text-teal-700 hover:bg-teal-50/60 px-5 py-2.5 rounded-full transition-all duration-300 flex items-center gap-1 cursor-pointer'>
+        Wilayah RT
+        <i class='fas fa-chevron-down text-xs ml-1'/>
+    </button>
+
+    <div class='absolute left-0 mt-1 w-40 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 flex flex-col py-2'>
+        <a class='px-4 py-2 text-sm text-gray-600 hover:bg-teal-50 hover:text-teal-700' href='/search/label/RT%201'>RT 1</a>
+        <a class='px-4 py-2 text-sm text-gray-600 hover:bg-teal-50 hover:text-teal-700' href='/search/label/RT%202'>RT 2</a>
+        <a class='px-4 py-2 text-sm text-gray-600 hover:bg-teal-50 hover:text-teal-700' href='/search/label/RT%203'>RT 3</a>
+        <a class='px-4 py-2 text-sm text-gray-600 hover:bg-teal-50 hover:text-teal-700' href='/search/label/RT%204'>RT 4</a>
+        <a class='px-4 py-2 text-sm text-gray-600 hover:bg-teal-50 hover:text-teal-700' href='/search/label/RT%205'>RT 5</a>
+        <a class='px-4 py-2 text-sm text-gray-600 hover:bg-teal-50 hover:text-teal-700' href='/search/label/RT%206'>RT 6</a>
+        <a class='px-4 py-2 text-sm text-gray-600 hover:bg-teal-50 hover:text-teal-700' href='/search/label/RT%207'>RT 7</a>
+    </div>
+</div>
+                <a class='text-sm font-semibold text-gray-500 hover:text-teal-700 hover:bg-teal-50/60 px-5 py-2.5 rounded-full transition-all duration-300' href='https://www.instagram.com/sandyakarsa.mengabdi'>Kontak Kami</a>
+            </div>
+
+            <button class='md:hidden p-2 text-gray-600 hover:text-teal-700 focus:outline-none transition-colors' id='mobile-menu-btn'>
+                <i class='fas fa-bars text-2xl'/>
+            </button>
+            
+        </div>
+
+        <div class='hidden md:hidden absolute top-20 left-0 w-full bg-white shadow-xl border-b border-gray-100 py-4 px-4 flex flex-col gap-2' id='mobile-menu'>
+            <a class='text-base font-bold text-teal-700 bg-teal-50 px-4 py-3 rounded-xl' href='/'>Beranda</a>
+            <a class='text-base font-semibold text-gray-600 hover:text-teal-700 hover:bg-teal-50/60 px-4 py-3 rounded-xl transition-all' href='/p/tentang.html'>Tentang Desa</a>
+            <a class='text-base font-semibold text-gray-600 hover:text-teal-700 hover:bg-teal-50/60 px-4 py-3 rounded-xl transition-all' href='/p/kontak.html'>Kontak Kami</a>
+        </div>
+    </nav>
+
+    <b:section class='main flex-grow' id='main' showaddelement='yes'>
+      <b:widget id='Blog1' locked='true' title='Postingan Blog' type='Blog' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+          <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+          <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+          <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showAuthor'>false</b:widget-setting>
+          <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+          <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='timestampLabel'/>
+          <b:widget-setting name='reactionsLabel'/>
+          <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+          <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+          <b:widget-setting name='showLabels'>true</b:widget-setting>
+          <b:widget-setting name='showLocation'>true</b:widget-setting>
+          <b:widget-setting name='postLabelsLabel'/>
+          <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+          <b:widget-setting name='postsPerAd'>3</b:widget-setting>
+          <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+          <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showInlineAds'>true</b:widget-setting>
+          <b:widget-setting name='showReactions'>false</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main' var='top'>
+                
+                <b:if cond='data:view.isHomepage'>
+                    
+                    <div class='relative w-full h-[75vh] min-h-[600px] flex items-center justify-center bg-gray-900 overflow-hidden'>
+                        <div class='absolute inset-0 w-full h-full opacity-60 bg-cover bg-center' id='hero-slider' style='background-image: url(&quot;https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&amp;fit=crop&amp;w=1600&amp;q=80&quot;);'/>
+                        <div class='absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent'/>
+                        
+                        <div class='relative z-10 text-center px-4 w-full max-w-3xl mx-auto'>
+                            <span class='inline-block py-1.5 px-4 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-bold tracking-widest uppercase mb-6 border border-white/30'>Katalog Resmi</span>
+                            <h1 class='text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight drop-shadow-lg'>
+                                Dukung Produk Lokal <br/> <span class='text-teal-400'>Desa Srihardono</span>
+                            </h1>
+                            <p class='text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto drop-shadow-md'>
+                                Temukan kuliner otentik, kerajinan tangan, dan layanan jasa terbaik langsung dari warga lokal.
+                            </p>
+                            
+                            <form action='/search' class='relative w-full max-w-2xl mx-auto group' method='get'>
+                                <div class='absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none'>
+                                    <i class='fas fa-search text-gray-300 group-focus-within:text-white transition-colors'/>
+                                </div>
+                                <input class='block w-full pl-12 pr-6 py-4 md:py-5 border border-white/30 rounded-2xl bg-white/10 backdrop-blur-md shadow-2xl focus:outline-none focus:bg-white/20 focus:ring-2 focus:ring-white/50 text-white placeholder-gray-300 text-lg transition-all duration-300' name='q' placeholder='Cari nama UMKM atau produk...' type='text'/>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class='bg-[#fafaf9] pt-20 pb-4'>
+                        <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
+                            <h2 class='text-sm font-bold tracking-widest text-teal-600 uppercase mb-3'>Eksplorasi Sekarang</h2>
+                            <h3 class='text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight'>Daftar UMKM Unggulan</h3>
+                            <div class='w-24 h-1 bg-teal-500 mx-auto mt-6 rounded-full'/>
+                        </div>
+                    </div>
+
+                    <div class='bg-[#fafaf9] pt-10 pb-24' id='kategori-section'>
+                        <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' id='kategori-container'>
+                            <div class='text-center py-20'>
+                                <i class='fas fa-circle-notch fa-spin text-4xl text-primary mb-4 block'/>
+                                <span class='text-gray-400 font-medium'>Menyiapkan Katalog... (Pastikan lihat di mode Live/View Blog)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                <b:elseif cond='data:view.isMultipleItems'/>
+                    
+                    <div class='bg-white py-16 border-b border-gray-100'>
+                        <div class='max-w-7xl mx-auto px-4 text-center'>
+                            <h1 class='text-4xl font-extrabold text-gray-900 mb-4'>
+                                <b:if cond='data:view.search.label'>
+                                    Kategori: <data:view.search.label/>
+                                <b:elseif cond='data:view.search.query'/>
+                                    Pencarian: <data:view.search.query/>
+                                <b:else/>
+                                    Semua Produk
+                                </b:if>
+                            </h1>
+                            <a class='text-primary font-medium hover:underline inline-flex items-center gap-2' href='/'><i class='fas fa-arrow-left text-sm'/> Kembali ke Beranda</a>
+                        </div>
+                    </div>
+
+                    <div class='bg-[#fafaf9]'>
+                        <div class='max-w-7xl mx-auto px-4 py-16'>
+                            <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
+                                <b:loop values='data:posts' var='post'>
+                                    <a class='group relative bg-white rounded-[24px] border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-400 flex flex-col h-full' expr:href='data:post.url'>
+                                        <div class='aspect-[4/3] w-full relative overflow-hidden bg-gray-100'>
+                                            <b:if cond='data:post.featuredImage'>
+                                                <img class='absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700' expr:alt='data:post.title' expr:src='data:post.featuredImage'/>
+                                            <b:else/>
+                                                <div class='w-full h-full flex items-center justify-center text-gray-300'><i class='fas fa-image text-3xl'/></div>
+                                            </b:if>
+                                            <div class='absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'/>
+                                        </div>
+                                        <div class='p-6 flex flex-col flex-grow'>
+                                            <h3 class='font-bold text-xl text-gray-900 group-hover:text-primary mb-2 line-clamp-1'><data:post.title/></h3>
+                                            <p class='text-sm text-gray-500 line-clamp-2 leading-relaxed mb-4 flex-grow'><data:post.snippets.short/></p>
+                                            <div class='flex items-center justify-between pt-4 border-t border-gray-50 mt-auto'>
+                                                <span class='text-primary font-semibold text-sm'>Lihat Detail</span>
+                                                <i class='fas fa-arrow-right text-gray-300 group-hover:text-primary transition-colors'/>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </b:loop>
+                            </div>
+                        </div>
+                    </div>
+
+                <b:else/>
+                    <b:loop values='data:posts' var='post'>
+                        <div class='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6'>
+                            <a class='inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-primary mb-8 transition bg-white px-5 py-2.5 rounded-full border border-gray-200 shadow-sm hover:shadow-md' href='/'>
+                                <i class='fas fa-arrow-left'/> Kembali
+                            </a>
+                            <h1 class='text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-8 leading-tight'>
+                                <data:post.title/>
+                            </h1>
+                        </div>
+                        <div class='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-16'>
+                            <div class='post-body text-gray-700 text-lg leading-relaxed bg-white p-8 md:p-10 rounded-[32px] shadow-sm border border-gray-100'>
+                                <data:post.body/>
+                            </div>
+                        </div>
+
+                        <div class='w-full bg-white border-t border-gray-100 py-16'>
+                            <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+                                <h3 class='text-2xl font-extrabold text-gray-900 mb-8'>Mungkin Anda juga suka</h3>
+                                <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8' id='rekomendasi-grid'>
+                                    <div class='text-gray-400 text-sm animate-pulse'>Memuat rekomendasi... (Cek di mode Live)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </b:loop>
+                </b:if>
+
+            </b:includable>
+        <b:includable id='aboutPostAuthor'>
+  <div class='author-name'>
+    <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
+      <span>
+        <data:post.author.name/>
+      </span>
+    </a>
+  </div>
+  <div>
+    <span class='author-desc'>
+      <data:post.author.aboutMe/>
+    </span>
+  </div>
+</b:includable>
+        <b:includable id='addComments'>
+  <a expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+    <b:message name='messages.postAComment'/>
+  </a>
+</b:includable>
+        <b:includable id='blogThisShare'>
+  <b:with value='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' var='onclick'>
+    <b:include name='platformShare'/>
+  </b:with>
+</b:includable>
+        <b:includable id='bylineByName' var='byline'>
+  <b:switch var='data:byline.name'>
+  <b:case value='share'/>
+    <b:include cond='data:post.shareUrl' name='postShareButtons'/>
+  <b:case value='comments'/>
+    <b:include cond='data:post.allowComments' name='postCommentsLink'/>
+  <b:case value='location'/>
+    <b:include cond='data:post.location' name='postLocation'/>
+  <b:case value='timestamp'/>
+    <b:include cond='not data:view.isPage' name='postTimestamp'/>
+  <b:case value='author'/>
+    <b:include name='postAuthor'/>
+  <b:case value='labels'/>
+    <b:include cond='data:post.labels' name='postLabels'/>
+  <b:case value='icons'/>
+    <b:include cond='data:post.emailPostUrl' name='emailPostIcon'/>
+  </b:switch>
+</b:includable>
+        <b:includable id='bylineRegion' var='regionItems'>
+  <b:loop values='data:regionItems' var='byline'>
+    <b:include data='byline' name='bylineByName'/>
+  </b:loop>
+</b:includable>
+        <b:includable id='commentAuthorAvatar'>
+  <div class='avatar-image-container'>
+    <img class='author-avatar' expr:src='data:comment.authorAvatarSrc' height='35' width='35'/>
+  </div>
+</b:includable>
+        <b:includable id='commentDeleteIcon' var='comment'>
+  <span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
+    <b:if cond='data:showCmtPopup'>
+      <div class='goog-toggle-button'>
+        <div class='goog-inline-block comment-action-icon'/>
+      </div>
+    <b:else/>
+      <a class='comment-delete' expr:href='data:comment.deleteUrl' expr:title='data:messages.deleteComment'>
+        <img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+      </a>
+    </b:if>
+  </span>
+</b:includable>
+        <b:includable id='commentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+        <b:includable id='commentFormIframeSrc' var='post'>
+  <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+</b:includable>
+        <b:includable id='commentItem' var='comment'>
+  <div class='comment' expr:id='&quot;c&quot; + data:comment.id'>
+    <b:include cond='data:blog.enabledCommentProfileImages' name='commentAuthorAvatar'/>
+
+    <div class='comment-block'>
+      <div class='comment-author'>
+        <b:if cond='data:comment.authorUrl'>
+          <b:message name='messages.authorSaidWithLink'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+            <b:param expr:value='data:comment.authorUrl' name='authorUrl'/>
+          </b:message>
+        <b:else/>
+          <b:message name='messages.authorSaid'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+          </b:message>
+        </b:if>
+      </div>
+      <div expr:class='&quot;comment-body&quot; + (data:comment.isDeleted ? &quot; deleted&quot; : &quot;&quot;)'>
+        <data:comment.body/>
+      </div>
+      <div class='comment-footer'>
+        <span class='comment-timestamp'>
+          <a expr:href='data:comment.url' title='comment permalink'>
+            <data:comment.timestamp/>
+          </a>
+          <b:include data='comment' name='commentDeleteIcon'/>
+        </span>
+      </div>
+    </div>
+  </div>
+</b:includable>
+        <b:includable id='commentList' var='comments'>
+  <div id='comments-block'>
+    <b:loop values='data:comments' var='comment'>
+      <b:include data='comment' name='commentItem'/>
+    </b:loop>
+  </div>
+</b:includable>
+        <b:includable id='commentPicker' var='post'>
+  <b:if cond='data:post.showThreadedComments'>
+    <b:include data='post' name='threadedComments'/>
+  <b:else/>
+    <b:include data='post' name='comments'/>
+  </b:if>
+</b:includable>
+        <b:includable id='comments' var='post'>
+  <section expr:class='&quot;comments&quot; + (data:post.embedCommentForm ? &quot; embed&quot; : &quot;&quot;)' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+    <b:if cond='data:post.allowComments'>
+
+      <b:include name='commentsTitle'/>
+
+      <div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'>
+        <b:include cond='data:post.comments' data='post.comments' name='commentList'/>
+      </div>
+
+      <b:if cond='data:post.commentPagingRequired'>
+        <div class='paging-control-container'>
+          <b:if cond='data:post.hasOlderLinks'>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
+              <data:messages.oldest/>
+            </a>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
+              <data:messages.older/>
+            </a>
+          </b:if>
+
+          <span class='comment-range-text'>
+            <data:post.commentRangeText/>
+          </span>
+
+          <b:if cond='data:post.hasNewerLinks'>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
+              <data:messages.newer/>
+            </a>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
+              <data:messages.newest/>
+            </a>
+          </b:if>
+        </div>
+      </b:if>
+
+      <div class='footer'>
+        <b:if cond='data:post.embedCommentForm'>
+          <b:if cond='data:post.allowNewComments'>
+            <b:include data='post' name='commentForm'/>
+          <b:else/>
+            <data:post.noNewCommentsText/>
+          </b:if>
+        <b:else/>
+          <b:if cond='data:post.allowComments'>
+            <b:include data='post' name='addComments'/>
+          </b:if>
+        </b:if>
+      </div>
+    </b:if>
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+        <b:includable id='commentsLink'>
+  <a class='comment-link' expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+    <b:if cond='data:post.numberOfComments &gt; 0'>
+      <b:message name='messages.numberOfComments'>
+        <b:param expr:value='data:post.numberOfComments' name='numComments'/>
+      </b:message>
+    <b:else/>
+      <data:messages.postAComment/>
+    </b:if>
+  </a>
+</b:includable>
+        <b:includable id='commentsLinkIframe'>
+  </b:includable>
+        <b:includable id='commentsTitle'>
+  <h3 class='title'><data:messages.comments/></h3>
+</b:includable>
+        <b:includable id='defaultAdUnit'>
+  <ins class='adsbygoogle' data-ad-format='auto' expr:data-ad-client='data:adClientId ?: data:blog.adsenseClientId' expr:data-ad-host='data:blog.adsenseHostId' expr:style='data:style ?: &quot;display: block;&quot;'>
+    <b:attr cond='not data:blog.analytics4' expr:value='data:blog.analyticsAccountNumber' name='data-analytics-uacct'/>
+  </ins>
+  <script>
+   (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</b:includable>
+        <b:includable id='emailPostIcon'>
+  <span class='byline post-icons'>
+    <span class='item-action'>
+      <a expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
+        <b:include data='{ iconClass: &quot;touch-icon sharing-icon&quot; }' name='emailIcon'/>
+      </a>
+    </span>
+  </span>
+</b:includable>
+        <b:includable id='facebookShare'>
+  <b:with value='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' var='onclick'>
+    <b:include name='platformShare'/>
+  </b:with>
+</b:includable>
+        <b:includable id='feedLinks'>
+  <b:if cond='!data:view.isPost'> <b:if cond='data:feedLinks'>
+      <div class='blog-feeds'>
+        <b:include data='feedLinks' name='feedLinksBody'/>
+      </div>
+    </b:if>
+  <b:else/> <div class='post-feeds'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.allowComments and data:post.feedLinks'>
+          <b:include data='post.feedLinks' name='feedLinksBody'/>
+        </b:if>
+      </b:loop>
+    </div>
+  </b:if>
+</b:includable>
+        <b:includable id='feedLinksBody' var='links'>
+  <div class='feed-links'>
+  <data:messages.subscribeTo/>
+  <b:loop values='data:links' var='f'>
+     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+  </b:loop>
+  </div>
+</b:includable>
+        <b:includable id='footerBylines'>
+  <b:if cond='data:widgets.Blog.first.footerBylines'>
+    <b:loop index='i' values='data:widgets.Blog.first.footerBylines' var='region'>
+      <b:if cond='not data:region.items.empty'>
+        <div expr:class='&quot;post-footer-line post-footer-line-&quot; + (data:i + 1)'>
+          <b:with value='&quot;footer-&quot; + (data:i + 1)' var='regionName'>
+            <b:include data='region.items' name='bylineRegion'/>
+          </b:with>
+        </div>
+      </b:if>
+    </b:loop>
+  </b:if>
+</b:includable>
+        <b:includable id='googlePlusShare'>
+</b:includable>
+        <b:includable id='headerByline'>
+  <b:if cond='data:widgets.Blog.first.headerByline'>
+    <div class='post-header'>
+      <div class='post-header-line-1'>
+        <b:with value='&quot;header-1&quot;' var='regionName'>
+          <b:include data='data:widgets.Blog.first.headerByline.items' name='bylineRegion'/>
+        </b:with>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+        <b:includable id='homePageLink'>
+  <a class='home-link' expr:href='data:blog.homepageUrl'>
+    <data:messages.home/>
+  </a>
+</b:includable>
+        <b:includable id='iframeComments' var='post'>
+  </b:includable>
+        <b:includable id='inlineAd' var='post'>
+  <b:if cond='!data:view.isPreview'>
+    <b:if cond='data:this.adCode or data:this.adClientId or data:blog.adsenseClientId'>
+      <div class='inline-ad'>
+        <b:if cond='data:this.adCode != &quot;&quot;'>
+          <data:this.adCode/>
+        <b:else/>
+          <b:include cond='data:this.adClientId or data:blog.adsenseClientId' name='defaultAdUnit'/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    <div class='inline-ad'>
+      <div class='inline-ad-placeholder'>
+        <span><b:message name='messages.adsGoHere'/></span>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+        <b:includable id='linkShare'>
+  <b:with value='&quot;window.prompt(\&quot;Copy to clipboard: Ctrl+C, Enter\&quot;, \&quot;&quot; + data:originalUrl + &quot;\&quot;); return false;&quot;' var='onclick'>
+    <b:include name='platformShare'/>
+  </b:with>
+</b:includable>
+        <b:includable id='nextPageLink'>
+  <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:messages.olderPosts'>
+    <data:messages.olderPosts/>
+  </a>
+</b:includable>
+        <b:includable id='otherSharingButton'>
+  <span class='sharing-platform-button sharing-element-other' expr:aria-label='data:messages.shareToOtherApps.escaped' expr:data-url='data:originalUrl' expr:title='data:messages.shareToOtherApps.escaped' role='menuitem' tabindex='-1'>
+    <b:with value='{key: &quot;sharingOther&quot;}' var='platform'>
+      <b:include name='sharingPlatformIcon'/>
+    </b:with>
+    <span class='platform-sharing-text'><data:messages.shareOtherApps.escaped/></span>
+  </span>
+</b:includable>
+        <b:includable id='platformShare'>
+  <a expr:class='&quot;goog-inline-block sharing-&quot; + data:platform.key' expr:data-url='data:originalUrl' expr:href='data:shareUrl + &quot;&amp;target=&quot; + data:platform.target' expr:onclick='data:onclick ? data:onclick : &quot;&quot;' expr:title='data:platform.shareMessage' target='_blank'>
+    <span class='share-button-link-text'>
+      <data:platform.shareMessage/>
+    </span>
+  </a>
+</b:includable>
+        <b:includable id='post' var='post'>
+  <div class='post'>
+    <b:include data='post' name='postMeta'/>
+    <b:include data='post' name='postTitle'/>
+    <b:include name='headerByline'/>
+    <b:if cond='data:view.isSingleItem'>
+      <b:include data='post' name='postBody'/>
+    <b:else/>
+      <b:include data='post' name='postBodySnippet'/>
+      <b:include data='post' name='postJumpLink'/>
+    </b:if>
+    <b:include data='post' name='postFooter'/>
+  </div>
+</b:includable>
+        <b:includable id='postAuthor'>
+  <span class='byline post-author vcard'>
+    <span class='post-author-label'>
+      <data:byline.label/>
+    </span>
+    <span class='fn'>
+      <b:if cond='data:post.author.profileUrl'>
+        <meta expr:content='data:post.author.profileUrl'/>
+        <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
+          <span><data:post.author.name/></span>
+        </a>
+      <b:else/>
+        <span><data:post.author.name/></span>
+      </b:if>
+    </span>
+  </span>
+</b:includable>
+        <b:includable id='postBody' var='post'>
+  <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
+    <data:post.body/>
+  </div>
+</b:includable>
+        <b:includable id='postBodySnippet' var='post'>
+  <b:include data='post' name='postBody'/>
+</b:includable>
+        <b:includable id='postCommentsAndAd' var='post'>
+  <article class='post-outer-container'>
+    <div class='post-outer'>
+      <b:include data='post' name='post'/>
+    </div>
+
+    <b:include cond='data:view.isSingleItem' data='post' name='commentPicker'/>
+
+    <b:include cond='data:view.isSingleItem and data:post.includeAd' data='post' name='inlineAd'/>
+  </article>
+
+  <b:include cond='data:view.isMultipleItems and data:post.includeAd' data='post' name='inlineAd'/>
+</b:includable>
+        <b:includable id='postCommentsLink'>
+  <b:if cond='data:view.isMultipleItems'>
+    <span class='byline post-comment-link container'>
+      <b:include cond='data:post.commentSource != 1' name='commentsLink'/>
+    </span>
+  </b:if>
+</b:includable>
+        <b:includable id='postFooter' var='post'>
+  <div class='post-footer'>
+    <b:include name='footerBylines'/>
+    <b:include data='post' name='postFooterAuthorProfile'/>
+  </div>
+</b:includable>
+        <b:includable id='postFooterAuthorProfile' var='post'>
+  <b:if cond='data:post.author.aboutMe and data:view.isPost'>
+    <div class='author-profile'>
+      <b:if cond='data:post.author.authorPhoto.url'>
+        <img class='author-image' expr:src='data:post.author.authorPhoto.url' width='50px'/>
+        <div class='author-about'>
+          <b:include data='post' name='aboutPostAuthor'/>
+        </div>
+      <b:else/>
+        <b:include data='post' name='aboutPostAuthor'/>
+      </b:if>
+    </div>
+  </b:if>
+</b:includable>
+        <b:includable id='postHeader' var='post'>
+  <b:include name='headerByline'/>
+</b:includable>
+        <b:includable id='postJumpLink' var='post'>
+  <div class='jump-link flat-button'>
+    <a expr:href='data:post.url fragment &quot;more&quot;' expr:title='data:post.title'>
+      <b:eval expr='data:blog.jumpLinkMessage'/>
+    </a>
+  </div>
+</b:includable>
+        <b:includable id='postLabels'>
+  <span class='byline post-labels'>
+    <span class='byline-label'><data:byline.label/></span>
+    <b:loop index='i' values='data:post.labels' var='label'>
+      <a expr:href='data:label.url' rel='tag'>
+        <data:label.name/>
+      </a>
+    </b:loop>
+  </span>
+</b:includable>
+        <b:includable id='postLocation'>
+  <span class='byline post-location'>
+    <data:byline.label/>
+    <a expr:href='data:post.location.mapsUrl' target='_blank'><data:post.location.name/></a>
+  </span>
+</b:includable>
+        <b:includable id='postMeta' var='post'>
+  <b:include data='post' name='postMetadataJSON'/>
+</b:includable>
+        <b:includable id='postMetadataJSONImage'>
+  &quot;image&quot;: {
+    &quot;@type&quot;: &quot;ImageObject&quot;,
+    <b:if cond='data:post.featuredImage.isResizable'>
+    &quot;url&quot;: &quot;<b:eval expr='resizeImage(data:post.featuredImage, 1200, &quot;1200:630&quot;)'/>&quot;,
+    &quot;height&quot;: 630,
+    &quot;width&quot;: 1200
+    <b:else/>
+    &quot;url&quot;: &quot;https://blogger.googleusercontent.com/img/b/U2hvZWJveA/AVvXsEgfMvYAhAbdHksiBA24JKmb2Tav6K0GviwztID3Cq4VpV96HaJfy0viIu8z1SSw_G9n5FQHZWSRao61M3e58ImahqBtr7LiOUS6m_w59IvDYwjmMcbq3fKW4JSbacqkbxTo8B90dWp0Cese92xfLMPe_tg11g/w1200/&quot;,
+    &quot;height&quot;: 348,
+    &quot;width&quot;: 1200
+    </b:if>
+  },
+</b:includable>
+        <b:includable id='postMetadataJSONPublisher'>
+ &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;Blogger&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://blogger.googleusercontent.com/img/b/U2hvZWJveA/AVvXsEgfMvYAhAbdHksiBA24JKmb2Tav6K0GviwztID3Cq4VpV96HaJfy0viIu8z1SSw_G9n5FQHZWSRao61M3e58ImahqBtr7LiOUS6m_w59IvDYwjmMcbq3fKW4JSbacqkbxTo8B90dWp0Cese92xfLMPe_tg11g/h60/&quot;,
+      &quot;width&quot;: 206,
+      &quot;height&quot;: 60
+    }
+  },
+</b:includable>
+        <b:includable id='postPagination'>
+  <div class='blog-pager container' id='blog-pager'>
+    <b:include cond='data:newerPageUrl' name='previousPageLink'/>
+    <b:include cond='data:olderPageUrl' name='nextPageLink'/>
+    <b:include cond='data:view.url != data:blog.homepageUrl' name='homePageLink'/>
+  </div>
+</b:includable>
+        <b:includable id='postReactions'>
+  </b:includable>
+        <b:includable id='postShareButtons'>
+  <div class='byline post-share-buttons goog-inline-block'>
+    <b:with value='data:sharingId ?: ((data:widget.instanceId ?: &quot;sharing&quot;) + &quot;-&quot; + (data:regionName ?: &quot;byline&quot;) + &quot;-&quot; + data:post.id)' var='sharingId'>
+      <b:include data='{                                                sharingId: data:sharingId,                                                originalUrl: data:post.url,                                                platforms: data:this.sharing.platforms,                                                shareUrl: data:post.shareUrl,                                                shareTitle: data:post.title,                                              }' name='sharingButtons'/>
+    </b:with>
+  </div>
+</b:includable>
+        <b:includable id='postTimestamp'>
+  <span class='byline post-timestamp'>
+    <data:byline.label/>
+    <b:if cond='data:post.url'>
+      <meta expr:content='data:post.url.canonical'/>
+      <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'>
+        <time class='published' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+          <data:post.date/>
+        </time>
+      </a>
+    </b:if>
+  </span>
+</b:includable>
+        <b:includable id='postTitle' var='post'>
+  <a expr:name='data:post.id'/>
+  <b:if cond='data:post.title != &quot;&quot;'>
+    <h3 class='post-title entry-title'>
+      <b:if cond='data:post.link or (data:post.url and data:view.url != data:post.url)'>
+        <a expr:href='data:post.link ?: data:post.url'><data:post.title/></a>
+      <b:else/>
+        <data:post.title/>
+      </b:if>
+    </h3>
+  </b:if>
+</b:includable>
+        <b:includable id='previousPageLink'>
+  <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:messages.newerPosts'>
+    <data:messages.newerPosts/>
+  </a>
+</b:includable>
+        <b:includable id='sharingButton'>
+  <span expr:aria-label='data:platform.shareMessage' expr:class='&quot;sharing-platform-button sharing-element-&quot; + data:platform.key' expr:data-href='data:shareUrl + &quot;&amp;target=&quot; + data:platform.target' expr:data-url='data:originalUrl' expr:title='data:platform.shareMessage' role='menuitem' tabindex='-1'>
+    <b:include name='sharingPlatformIcon'/>
+    <span class='platform-sharing-text'><data:platform.name/></span>
+  </span>
+</b:includable>
+        <b:includable id='sharingButtonContent'>
+  <div class='flat-icon-button ripple'>
+    <b:include name='shareIcon'/>
+  </div>
+</b:includable>
+        <b:includable id='sharingButtons'>
+  <div class='sharing' expr:aria-owns='&quot;sharing-popup-&quot; + data:sharingId' expr:data-title='data:shareTitle'>
+    <button class='sharing-button touch-icon-button' expr:aria-controls='&quot;sharing-popup-&quot; + data:sharingId' expr:aria-label='data:messages.share.escaped' expr:id='&quot;sharing-button-&quot; + data:sharingId' role='button'>
+      <b:include name='sharingButtonContent'/>
+    </button>
+    <b:include name='sharingButtonsMenu'/>
+  </div>
+</b:includable>
+        <b:includable id='sharingButtonsMenu'>
+  <div class='share-buttons-container'>
+    <ul aria-hidden='true' class='share-buttons hidden' expr:aria-label='data:messages.share.escaped' expr:id='&quot;sharing-popup-&quot; + data:sharingId' role='menu'>
+      <b:loop values='(data:platforms ?: data:blog.sharing.platforms) filter (p =&gt; p.key not in {&quot;blogThis&quot;})' var='platform'>
+        <li>
+          <b:include name='sharingButton'/>
+        </li>
+      </b:loop>
+      <li aria-hidden='true' class='hidden'>
+        <b:include name='otherSharingButton'/>
+      </li>
+    </ul>
+  </div>
+</b:includable>
+        <b:includable id='sharingPlatformIcon'>
+  <b:include data='{ iconClass: (&quot;touch-icon sharing-&quot; + data:platform.key) }' expr:name='data:platform.key + &quot;Icon&quot;'/>
+</b:includable>
+        <b:includable id='threadedCommentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+        <b:includable id='threadedCommentJs' var='post'>
+  <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+  <b:template-script inline='true' name='threaded_comments'/>
+  <script type='text/javascript'>
+    blogger.widgets.blog.initThreadedComments(
+        <data:post.commentJso/>,
+        <data:post.commentMsgs/>,
+        <data:post.commentConfig/>);
+  </script>
+</b:includable>
+        <b:includable id='threadedComments' var='post'>
+  <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+
+    <b:include name='commentsTitle'/>
+
+    <div class='comments-content'>
+      <b:if cond='data:post.embedCommentForm'>
+        <b:include data='post' name='threadedCommentJs'/>
+      </b:if>
+      <div id='comment-holder'>
+         <data:post.commentHtml/>
+      </div>
+    </div>
+
+    <p class='comment-footer'>
+      <b:if cond='data:post.allowNewComments'>
+        <b:include data='post' name='threadedCommentForm'/>
+      <b:else/>
+        <data:post.noNewCommentsText/>
+      </b:if>
+      <b:if cond='data:post.showManageComments'>
+        <b:include data='post' name='manageComments'/>
+      </b:if>
+    </p>
+
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+        <b:includable id='tooltipCss'>
+  <style>
+    .post-body a.b-tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip {
+      display: block !important;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-20%, 1px);
+      visibility: hidden;
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip iframe {
+      width: 200px;
+      height: 198px;
+      max-width: none;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (hover: hover) {
+      .post-body a.b-tooltip-container:hover .b-tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  </style>
+  </b:includable>
+      </b:widget>
+    </b:section>
+
+    <footer class='bg-gray-900 py-8 w-full mt-auto'>
+        <div class='max-w-7xl mx-auto px-4 text-center'>
+            <p class='text-sm text-gray-400'>
+                &#169; 2026 Katalog UMKM Desa Srihardono. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+<script>
+    //<![CDATA[
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 0. MOBILE MENU TOGGLE
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileBtn.querySelector('i');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    } else {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    }
+                });
+            }
+
+            // 1. HERO SLIDER
+            const heroSlider = document.getElementById('hero-slider');
+            if (heroSlider) {
+                const heroImages = [
+                    'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1600&q=80',
+                    'https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=1600&q=80'
+                ];
+                let currentImgIndex = 0;
+                setInterval(() => {
+                    currentImgIndex = (currentImgIndex + 1) % heroImages.length;
+                    heroSlider.style.backgroundImage = `url('${heroImages[currentImgIndex]}')`;
+                }, 4000);
+            }
+
+            // --- 2. PERBAIKAN GAMBAR NGEBLUR ---
+            function getImageUrl(entry) {
+                let img = 'https://placehold.co/800x600/f5f5f4/44403c.png?text=Tanpa+Gambar';
+                if (entry.media$thumbnail) {
+                    let url = entry.media$thumbnail.url;
+                    // Regex diperbarui untuk menangani format URL Blogger lama (/s...) dan baru (=s...) 
+                    // dan memaksanya ke resolusi tinggi (w800-h600)
+                    img = url.replace(/\/s[0-9]+(\-c)?\//, '/w800-h600-c/').replace(/\=s[0-9]+(\-c)?/, '=w800-h600-c');
+                } else if (entry.content && entry.content.$t) {
+                    let match = entry.content.$t.match(/<img[^>]+src="([^">]+)"/);
+                    if (match) img = match[1];
+                }
+                return img;
+            }
+
+            // --- 3. DESAIN CARD BARU (LEBIH MODERN & CLEAN) ---
+            function createCardHTML(title, link, img, snippet, kategoriLabel) {
+                return `
+                <a href="${link}" class="group flex flex-col bg-white rounded-3xl border border-gray-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_-5px_rgba(13,148,136,0.15)] hover:border-teal-100 transition-all duration-500 overflow-hidden h-full transform hover:-translate-y-1">
+                    
+                    <div class="relative w-full aspect-[4/3] overflow-hidden bg-gray-50">
+                        <img src="${img}" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" alt="${title}" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1.5 bg-white/95 backdrop-blur-md text-teal-700 text-xs font-bold rounded-full shadow-sm tracking-wide border border-teal-50">${kategoriLabel}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex flex-col flex-grow relative bg-white">
+                        <h3 class="font-extrabold text-xl text-gray-900 group-hover:text-teal-600 transition-colors mb-3 line-clamp-2 leading-tight">${title}</h3>
+                        <p class="text-sm text-gray-500 line-clamp-3 leading-relaxed mb-6 flex-grow">${snippet}</p>
+                        
+                        <div class="mt-auto flex items-center justify-between border-t border-gray-50 pt-5">
+                            <span class="text-teal-600 font-bold text-sm tracking-wide group-hover:underline decoration-2 underline-offset-4">Lihat Detail</span>
+                            <div class="w-8 h-8 rounded-full bg-teal-50 flex items-center justify-center group-hover:bg-teal-600 group-hover:text-white text-teal-600 transition-all duration-300 transform group-hover:rotate-45">
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>`;
+            }
+
+            // 4. RENDER KATEGORI HOMEPAGE
+            const container = document.getElementById('kategori-container');
+            if (container && (window.location.pathname === '/' || window.location.pathname === '/index.html')) {
+                const daftarKategori = ['Kuliner', 'Perdagangan', 'Jasa', 'Kerajinan & Produksi', 'Agrobisnis & Peternakan'];
+                container.innerHTML = ''; 
+                
+                daftarKategori.forEach(kategori => {
+                    const sectionHtml = `
+                        <div class="mb-20">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-2 h-8 bg-teal-500 rounded-full"></div>
+                                    <h3 class="text-3xl font-extrabold text-gray-900 tracking-tight">${kategori}</h3>
+                                </div>
+                                <a href="/search/label/${encodeURIComponent(kategori)}" class="group text-teal-600 font-bold hover:text-teal-800 flex items-center gap-2 text-sm bg-teal-50 hover:bg-teal-100 px-5 py-2.5 rounded-full transition-colors">
+                                    Lihat Semua <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                            <div id="grid-${kategori.replace(/\s+/g, '-')}" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', sectionHtml);
+
+                    fetch(`/feeds/posts/default/-/${encodeURIComponent(kategori)}?alt=json&max-results=4`)
+                    .then(res => res.json())
+                    .then(data => {
+                        const gridEl = document.getElementById(`grid-${kategori.replace(/\s+/g, '-')}`);
+                        const entries = data.feed.entry || [];
+                        if(entries.length === 0) {
+                            gridEl.innerHTML = `<p class="text-gray-400 italic col-span-full bg-gray-50 p-8 rounded-3xl text-center border border-dashed border-gray-200">Belum ada produk untuk kategori ini.</p>`;
+                            return;
+                        }
+                        let cardsHtml = '';
+                        entries.forEach(entry => {
+                            let title = entry.title.$t;
+                            let link = entry.link.find(l => l.rel === 'alternate').href;
+                            let img = getImageUrl(entry);
+                            let snippet = entry.summary ? entry.summary.$t.substring(0, 85) + '...' : (entry.content ? entry.content.$t.replace(/(<([^>]+)>)/gi, "").substring(0, 85) + '...' : '');
+                            
+                            // Kirim nama kategori ke dalam fungsi pembuat Card
+                            cardsHtml += createCardHTML(title, link, img, snippet, kategori);
+                        });
+                        gridEl.innerHTML = cardsHtml;
+                    }).catch(() => {});
+                });
+            }
+
+            // 5. REKOMENDASI SINGLE PAGE
+            const rekomendasiGrid = document.getElementById('rekomendasi-grid');
+            if (rekomendasiGrid && window.location.href.indexOf('.html') > -1) {
+                fetch('/feeds/posts/default?alt=json&max-results=5')
+                .then(res => res.json())
+                .then(data => {
+                    const entries = data.feed.entry || [];
+                    let html = '';
+                    let count = 0;
+                    let currentTitle = document.title;
+
+                    entries.forEach(entry => {
+                        if(count >= 4) return; 
+                        let title = entry.title.$t;
+                        if(currentTitle.indexOf(title) > -1) return;
+                        
+                        let link = entry.link.find(l => l.rel === 'alternate').href;
+                        let img = getImageUrl(entry);
+                        let snippet = entry.summary ? entry.summary.$t.substring(0, 85) + '...' : '';
+
+                        // Di halaman single post, labelnya diset "Rekomendasi"
+                        html += createCardHTML(title, link, img, snippet, "Rekomendasi");
+                        count++;
+                    });
+                    rekomendasiGrid.innerHTML = html !== '' ? html : '<p class="text-gray-400 italic">Belum ada rekomendasi.</p>';
+                }).catch(() => {});
+            }
+        });
+    //]]>
+    </script>
+</body>
+</html>
