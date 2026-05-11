@@ -1,4 +1,3 @@
-````md
 # UMKM Blogger Theme
 
 Modern Blogger theme for village UMKM catalogs and local business directories.
