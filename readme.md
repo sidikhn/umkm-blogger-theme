@@ -16,7 +16,7 @@ Designed for community marketplaces, village business showcases, KKN projects, a
 
 ## Single Post View
 
-![Single Post](preview/single-post.png)
+![Single Post](preview/single-post1.png)
 
 ---
 
@@ -28,17 +28,17 @@ Designed for community marketplaces, village business showcases, KKN projects, a
 
 # Features
 
-* Responsive Design
-* Modern UI
-* Dynamic UMKM Card Layout
-* Auto Category Section
-* Hero Slider
-* Google Maps Integration
-* SEO Friendly
-* Fast Loading
-* Mobile Friendly
-* Clean Layout
-* Blogger Native Compatible
+- Responsive Design
+- Modern UI
+- Dynamic UMKM Card Layout
+- Auto Category Section
+- Hero Slider
+- Google Maps Integration
+- SEO Friendly
+- Fast Loading
+- Mobile Friendly
+- Clean Layout
+- Blogger Native Compatible
 
 ---
 
@@ -145,29 +145,29 @@ umkm-blogger-theme/
 
 | Device  | Support |
 | ------- | ------- |
-| Desktop | ✅       |
-| Tablet  | ✅       |
-| Mobile  | ✅       |
+| Desktop | ✅      |
+| Tablet  | ✅      |
+| Mobile  | ✅      |
 
 ---
 
 # Optimization
 
-* Lazy Load Image
-* Lightweight Layout
-* Smooth Animation
-* Optimized DOM Structure
+- Lazy Load Image
+- Lightweight Layout
+- Smooth Animation
+- Optimized DOM Structure
 
 ---
 
 # Best Use Cases
 
-* Village UMKM Catalog
-* KKN Project
-* Community Marketplace
-* Local Business Directory
-* Product Showcase
-* Digital Village Website
+- Village UMKM Catalog
+- KKN Project
+- Community Marketplace
+- Local Business Directory
+- Product Showcase
+- Digital Village Website
 
 ---
 
